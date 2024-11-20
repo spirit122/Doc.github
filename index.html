@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oceanología | El Mundo Submarino</title>
+    <title>Oceanology | The Underwater World</title>
     <style>
         :root {
             --deep-ocean: #03045e;
@@ -26,7 +26,6 @@
             min-height: 100vh;
         }
 
-        /* Efecto de olas en el header */
         .wave-container {
             position: relative;
             background: linear-gradient(45deg, var(--deep-ocean), var(--medium-ocean));
@@ -171,6 +170,8 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 1rem;
+            color: white;
+            font-size: 1.2rem;
         }
 
         h2 {
@@ -182,6 +183,11 @@
         h3 {
             color: var(--surface-water);
             margin-bottom: 1rem;
+        }
+
+        h4 {
+            color: var(--foam);
+            margin-bottom: 0.5rem;
         }
 
         p {
@@ -197,7 +203,6 @@
             margin-top: 4rem;
         }
 
-        /* Burbujas animadas */
         .bubble {
             position: fixed;
             background: rgba(255,255,255,0.1);
@@ -233,11 +238,19 @@
             .ocean-section {
                 padding: 1.5rem;
             }
+
+            .marine-life {
+                flex-direction: column;
+            }
+
+            .species-card {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Burbujas animadas -->
+    <!-- Animated bubbles script -->
     <script>
         function createBubbles() {
             const body = document.querySelector('body');
@@ -255,106 +268,109 @@
         window.onload = createBubbles;
     </script>
 
+    <!-- Header with wave effect -->
     <div class="wave-container">
         <header>
-            <h1>Oceanología</h1>
-            <p>Explorando las Profundidades del Conocimiento Marino</p>
+            <h1>Oceanology</h1>
+            <p>Exploring the Depths of Marine Knowledge</p>
         </header>
         <div class="wave"></div>
     </div>
 
+    <!-- Navigation -->
     <nav>
         <ul>
-            <li><a href="#exploracion">Exploración</a></li>
-            <li><a href="#ecosistemas">Ecosistemas</a></li>
-            <li><a href="#investigacion">Investigación</a></li>
-            <li><a href="#conservacion">Conservación</a></li>
+            <li><a href="#exploration">Exploration</a></li>
+            <li><a href="#ecosystems">Ecosystems</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#conservation">Conservation</a></li>
         </ul>
     </nav>
 
+    <!-- Main content -->
     <main>
-        <section id="exploracion" class="ocean-section">
-            <h2>Exploración Oceánica</h2>
+        <section id="exploration" class="ocean-section">
+            <h2>Ocean Exploration</h2>
             <div class="ocean-grid">
                 <div class="ocean-card">
-                    <h3>Zonas Oceánicas</h3>
+                    <h3>Ocean Zones</h3>
                     <div class="depth-level">
-                        <h4>Zona Epipelágica (0-200m)</h4>
-                        <p>Zona donde penetra la luz solar y ocurre la fotosíntesis</p>
+                        <h4>Epipelagic Zone (0-200m)</h4>
+                        <p>Sunlight zone where photosynthesis occurs</p>
                     </div>
                     <div class="depth-level">
-                        <h4>Zona Mesopelágica (200-1000m)</h4>
-                        <p>Zona de penumbra con bioluminiscencia</p>
+                        <h4>Mesopelagic Zone (200-1000m)</h4>
+                        <p>Twilight zone with bioluminescent organisms</p>
                     </div>
                     <div class="depth-level">
-                        <h4>Zona Batipelágica (1000-4000m)</h4>
-                        <p>Oscuridad total y alta presión</p>
+                        <h4>Bathypelagic Zone (1000-4000m)</h4>
+                        <p>Total darkness and high pressure environment</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="ecosistemas" class="ocean-section">
-            <h2>Ecosistemas Marinos</h2>
+        <section id="ecosystems" class="ocean-section">
+            <h2>Marine Ecosystems</h2>
             <div class="marine-life">
                 <div class="species-card">
-                    <div class="placeholder-img">Arrecife de Coral</div>
-                    <h3>Arrecifes Coralinos</h3>
-                    <p>Ecosistemas diversos y coloridos que albergan el 25% de la vida marina</p>
+                    <div class="placeholder-img">Coral Reef</div>
+                    <h3>Coral Reefs</h3>
+                    <p>Diverse and colorful ecosystems housing 25% of marine life</p>
                 </div>
                 <div class="species-card">
-                    <div class="placeholder-img">Bosque de Kelp</div>
-                    <h3>Bosques de Kelp</h3>
-                    <p>Formaciones de algas gigantes que crean hábitats únicos</p>
+                    <div class="placeholder-img">Kelp Forest</div>
+                    <h3>Kelp Forests</h3>
+                    <p>Giant algae formations creating unique habitats</p>
                 </div>
                 <div class="species-card">
-                    <div class="placeholder-img">Ventila Hidrotermal</div>
-                    <h3>Ventilas Hidrotermales</h3>
-                    <p>Oasis de vida en las profundidades oceánicas</p>
+                    <div class="placeholder-img">Hydrothermal Vent</div>
+                    <h3>Hydrothermal Vents</h3>
+                    <p>Deep-sea oases of life</p>
                 </div>
             </div>
         </section>
 
-        <section id="investigacion" class="ocean-section">
-            <h2>Investigación Marina</h2>
+        <section id="research" class="ocean-section">
+            <h2>Marine Research</h2>
             <div class="ocean-grid">
                 <div class="ocean-card">
-                    <h3>Tecnología Submarina</h3>
-                    <p>Exploración con ROVs y submarinos de aguas profundas</p>
+                    <h3>Underwater Technology</h3>
+                    <p>Exploration using ROVs and deep-sea submarines</p>
                 </div>
                 <div class="ocean-card">
-                    <h3>Estudios Oceanográficos</h3>
-                    <p>Análisis de corrientes, química marina y biodiversidad</p>
+                    <h3>Oceanographic Studies</h3>
+                    <p>Analysis of currents, marine chemistry, and biodiversity</p>
                 </div>
                 <div class="ocean-card">
-                    <h3>Cambio Climático</h3>
-                    <p>Impacto del calentamiento global en los océanos</p>
+                    <h3>Climate Change</h3>
+                    <p>Impact of global warming on ocean ecosystems</p>
                 </div>
             </div>
         </section>
 
-        <section id="conservacion" class="ocean-section">
-            <h2>Conservación Marina</h2>
+        <section id="conservation" class="ocean-section">
+            <h2>Marine Conservation</h2>
             <div class="ocean-grid">
                 <div class="ocean-card">
-                    <h3>Áreas Protegidas</h3>
-                    <p>Zonas designadas para la preservación de ecosistemas marinos</p>
+                    <h3>Protected Areas</h3>
+                    <p>Designated zones for marine ecosystem preservation</p>
                 </div>
                 <div class="ocean-card">
-                    <h3>Especies Amenazadas</h3>
-                    <p>Programas de protección de especies marinas en peligro</p>
+                    <h3>Endangered Species</h3>
+                    <p>Protection programs for threatened marine species</p>
                 </div>
                 <div class="ocean-card">
-                    <h3>Contaminación Marina</h3>
-                    <p>Iniciativas para reducir la contaminación oceánica</p>
+                    <h3>Marine Pollution</h3>
+                    <p>Initiatives to reduce ocean pollution and debris</p>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2024 Oceanología - Descubriendo los Secretos del Mar</p>
-        <p>Un viaje a las profundidades del conocimiento marino</p>
+        <p>© 2024 Oceanology - Discovering the Secrets of the Sea</p>
+        <p>A Journey into the Depths of Marine Knowledge</p>
     </footer>
 </body>
 </html>
