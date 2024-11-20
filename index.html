@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oceanología: Explorando los Misterios del Mar</title>
+    <style>
+        /* Variables de color */
+        :root {
+            --primary-color: #005f73;
+            --secondary-color: #0a9396;
+            --accent-color: #94d2bd;
+            --text-color: #001219;
+            --light-bg: #e9ecef;
+        }
+
+        /* Estilos generales */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        /* Encabezado */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        /* Navegación */
+        nav {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Contenido principal */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Tarjetas informativas */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background-color: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Imágenes */
+        .img-container {
+            width: 100%;
+            height: 200px;
+            background-color: var(--accent-color);
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado principal -->
+    <header>
+        <h1>Oceanología</h1>
+        <p>Descubre los secretos de nuestros océanos</p>
+    </header>
+
+    <!-- Navegación -->
+    <nav>
+        <ul>
+            <li><a href="#introduccion">Introducción</a></li>
+            <li><a href="#areas">Áreas de Estudio</a></li>
+            <li><a href="#importancia">Importancia</a></li>
+            <li><a href="#investigacion">Investigación</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main>
+        <!-- Sección de introducción -->
+        <section id="introduccion" class="section">
+            <h2>¿Qué es la Oceanología?</h2>
+            <p>La oceanología, también conocida como oceanografía, es la ciencia que estudia los océanos y los procesos que ocurren en ellos. Este campo multidisciplinario abarca aspectos físicos, químicos, biológicos y geológicos de los ambientes marinos.</p>
+            <div class="img-container">Imagen representativa del océano</div>
+        </section>
+
+        <!-- Sección de áreas de estudio -->
+        <section id="areas" class="section">
+            <h2>Áreas de Estudio</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Oceanografía Física</h3>
+                    <p>Estudia las corrientes oceánicas, las olas, las mareas y la dinámica de los fluidos marinos.</p>
+                </div>
+                <div class="card">
+                    <h3>Oceanografía Química</h3>
+                    <p>Analiza la composición química del agua marina y los ciclos biogeoquímicos.</p>
+                </div>
+                <div class="card">
+                    <h3>Oceanografía Biológica</h3>
+                    <p>Investiga la vida marina y los ecosistemas oceánicos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de importancia -->
+        <section id="importancia" class="section">
+            <h2>Importancia de los Océanos</h2>
+            <p>Los océanos son fundamentales para la vida en la Tierra por múltiples razones:</p>
+            <ul>
+                <li>Regulan el clima global</li>
+                <li>Proporcionan recursos alimenticios</li>
+                <li>Absorben CO2 atmosférico</li>
+                <li>Mantienen la biodiversidad del planeta</li>
+            </ul>
+        </section>
+
+        <!-- Sección de investigación -->
+        <section id="investigacion" class="section">
+            <h2>Investigación Actual</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Cambio Climático</h3>
+                    <p>Estudio del impacto del calentamiento global en los océanos.</p>
+                </div>
+                <div class="card">
+                    <h3>Conservación Marina</h3>
+                    <p>Desarrollo de estrategias para proteger los ecosistemas marinos.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>© 2024 Oceanología - Explorando los Misterios del Mar</p>
+        <p>Creado con fines educativos</p>
+    </footer>
+</body>
+</html>
