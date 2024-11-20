@@ -1,0 +1,44 @@
+
+site_name: OceanologyNexGen Docs
+site_url: https://spirit122.github.io/Doc.github
+
+# Repository
+repo_name: spirit122/Doc.github
+repo_url: https://github.com/spirit122/Doc.github
+
+# Plugins
+plugins:
+  - offline
+  - glightbox
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - minify:
+      minify_html: true
+theme:
+  favicon: ./assets/images/logo.jpg
+  logo: ./assets/images/logo.jpg
+  name: material
+  custom_dir: overrides
+  palette:
+    primary: black
+    scheme: slate
+    # Palette toggle for dark mode
+    # - scheme: slate
+    #   toggle:
+    #     icon: material/brightness-4
+    #     name: Switch to light mode
+    # # Palette toggle for light mode
+    # - scheme: default
+    #   toggle:
+    #     icon: material/brightness-7 
+    #     name: Switch to dark mode
+  features:
+    - navigation.path
+    - navigation.tabs
+    - navigation.path
+    - navigation.footer
+    - navigation.expand
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+# Page navigation
