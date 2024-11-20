@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oceanology | The Underwater World</title>
+    <style>
+        :root {
+            --deep-ocean: #03045e;
+            --medium-ocean: #0077b6;
+            --shallow-ocean: #00b4d8;
+            --surface-water: #90e0ef;
+            --foam: #caf0f8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, var(--deep-ocean) 0%, var(--medium-ocean) 100%);
+            color: white;
+            min-height: 100vh;
+        }
+
+        .wave-container {
+            position: relative;
+            background: linear-gradient(45deg, var(--deep-ocean), var(--medium-ocean));
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%2390e0ef' fill-opacity='0.3' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            animation: wave 10s linear infinite;
+        }
+
+        @keyframes wave {
+            0% { background-position-x: 0; }
+            100% { background-position-x: 1440px; }
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 1rem;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            background-color: rgba(0, 119, 182, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--surface-water);
+            color: var(--deep-ocean);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .ocean-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .ocean-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .ocean-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .ocean-card:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+        }
+
+        .depth-level {
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            background: linear-gradient(to bottom, 
+                rgba(0,180,216,0.1) 0%,
+                rgba(0,119,182,0.2) 50%,
+                rgba(3,4,94,0.3) 100%);
+            border-radius: 15px;
+        }
+
+        .marine-life {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .species-card {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .placeholder-img {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, var(--medium-ocean), var(--shallow-ocean));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        h2 {
+            color: var(--foam);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        h3 {
+            color: var(--surface-water);
+            margin-bottom: 1rem;
+        }
+
+        h4 {
+            color: var(--foam);
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: var(--deep-ocean);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .bubble {
+            position: fixed;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: rise 10s infinite ease-in;
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100vh) scale(2);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .ocean-section {
+                padding: 1.5rem;
+            }
+
+            .marine-life {
+                flex-direction: column;
+            }
+
+            .species-card {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated bubbles script -->
+    <script>
+        function createBubbles() {
+            const body = document.querySelector('body');
+            for(let i = 0; i < 20; i++) {
+                const bubble = document.createElement('div');
+                bubble.className = 'bubble';
+                const size = Math.random() * 30 + 10;
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                bubble.style.left = `${Math.random() * 100}vw`;
+                bubble.style.animationDelay = `${Math.random() * 10}s`;
+                body.appendChild(bubble);
+            }
+        }
+        window.onload = createBubbles;
+    </script>
+
+    <!-- Header with wave effect -->
+    <div class="wave-container">
+        <header>
+            <h1>Oceanology</h1>
+            <p>Exploring the Depths of Marine Knowledge</p>
+        </header>
+        <div class="wave"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#exploration">Exploration</a></li>
+            <li><a href="#ecosystems">Ecosystems</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#conservation">Conservation</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content -->
+    <main>
+        <section id="exploration" class="ocean-section">
+            <h2>Ocean Exploration</h2>
+            <div class="ocean-grid">
+                <div class="ocean-card">
+                    <h3>Ocean Zones</h3>
+                    <div class="depth-level">
+                        <h4>Epipelagic Zone (0-200m)</h4>
+                        <p>Sunlight zone where photosynthesis occurs</p>
+                    </div>
+                    <div class="depth-level">
+                        <h4>Mesopelagic Zone (200-1000m)</h4>
+                        <p>Twilight zone with bioluminescent organisms</p>
+                    </div>
+                    <div class="depth-level">
+                        <h4>Bathypelagic Zone (1000-4000m)</h4>
+                        <p>Total darkness and high pressure environment</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ecosystems" class="ocean-section">
+            <h2>Marine Ecosystems</h2>
+            <div class="marine-life">
+                <div class="species-card">
+                    <div class="placeholder-img">Coral Reef</div>
+                    <h3>Coral Reefs</h3>
+                    <p>Diverse and colorful ecosystems housing 25% of marine life</p>
+                </div>
+                <div class="species-card">
+                    <div class="placeholder-img">Kelp Forest</div>
+                    <h3>Kelp Forests</h3>
+                    <p>Giant algae formations creating unique habitats</p>
+                </div>
+                <div class="species-card">
+                    <div class="placeholder-img">Hydrothermal Vent</div>
+                    <h3>Hydrothermal Vents</h3>
+                    <p>Deep-sea oases of life</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="ocean-section">
+            <h2>Marine Research</h2>
+            <div class="ocean-grid">
+                <div class="ocean-card">
+                    <h3>Underwater Technology</h3>
+                    <p>Exploration using ROVs and deep-sea submarines</p>
+                </div>
+                <div class="ocean-card">
+                    <h3>Oceanographic Studies</h3>
+                    <p>Analysis of currents, marine chemistry, and biodiversity</p>
+                </div>
+                <div class="ocean-card">
+                    <h3>Climate Change</h3>
+                    <p>Impact of global warming on ocean ecosystems</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="conservation" class="ocean-section">
+            <h2>Marine Conservation</h2>
+            <div class="ocean-grid">
+                <div class="ocean-card">
+                    <h3>Protected Areas</h3>
+                    <p>Designated zones for marine ecosystem preservation</p>
+                </div>
+                <div class="ocean-card">
+                    <h3>Endangered Species</h3>
+                    <p>Protection programs for threatened marine species</p>
+                </div>
+                <div class="ocean-card">
+                    <h3>Marine Pollution</h3>
+                    <p>Initiatives to reduce ocean pollution and debris</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Oceanology - Discovering the Secrets of the Sea</p>
+        <p>A Journey into the Depths of Marine Knowledge</p>
+    </footer>
+</body>
+</html>
