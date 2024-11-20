@@ -1,18 +1,102 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Redirecting</title>
-  <noscript>
-    <meta http-equiv="refresh" content="1; url=latest/" />
-  </noscript>
-  <script>
-    window.location.replace(
-      "latest/" + window.location.search + window.location.hash
-    );
-  </script>
-</head>
-<body>
-  Redirecting to <a href="latest/">latest/</a>...
-</body>
-</html>
+import React from 'react';
+import { Menu, Search, Github, ChevronRight } from 'lucide-react';
+
+export default function DocsPage() {
+  return (
+    <div className="min-h-screen bg-slate-900 text-gray-100">
+      {/* Header */}
+      <header className="border-b border-slate-700">
+        <nav className="px-4 py-2 flex items-center justify-between">
+          <div className="flex items-center space-x-4">
+            <button className="p-2 hover:bg-slate-800 rounded-lg">
+              <Menu size={24} />
+            </button>
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-blue-500 rounded-full"></div>
+              <span className="text-lg font-semibold">Oceanology Docs</span>
+            </div>
+          </div>
+          <div className="flex items-center space-x-4">
+            <button className="p-2 hover:bg-slate-800 rounded-lg">
+              <Search size={24} />
+            </button>
+            <a href="https://github.com/Galidar/oceanology-docs" className="flex items-center space-x-2 text-gray-400 hover:text-gray-200">
+              <Github size={24} />
+              <span>Galidar/oceanology-docs</span>
+            </a>
+          </div>
+        </nav>
+        
+        {/* Tabs */}
+        <div className="px-4 border-t border-slate-700">
+          <nav className="flex space-x-4">
+            {['Home', 'Getting started', 'Tutorials', 'Integrations'].map((tab) => (
+              <button key={tab} className={`py-2 px-3 ${tab === 'Home' ? 'text-blue-400 border-b-2 border-blue-400' : 'text-gray-400'}`}>
+                {tab}
+              </button>
+            ))}
+          </nav>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <div className="flex">
+        {/* Sidebar */}
+        <aside className="w-64 p-4 border-r border-slate-700 hidden md:block">
+          <nav className="space-y-2">
+            <div className="font-medium text-gray-400">Table of Contents</div>
+            {[
+              'What is Oceanology?',
+              'Key Features',
+              'Getting Started',
+              'Documentation Overview',
+              'Community and Support',
+              'Other Social'
+            ].map((item) => (
+              <a key={item} href={`#${item.toLowerCase().replace(/\s+/g, '-')}`} className="block py-1 px-2 text-gray-400 hover:text-gray-200 hover:bg-slate-800 rounded">
+                {item}
+              </a>
+            ))}
+          </nav>
+        </aside>
+
+        {/* Content */}
+        <main className="flex-1 p-8 max-w-4xl">
+          <h1 className="text-4xl font-bold mb-6">Oceanology 5 Documentation</h1>
+          
+          <p className="mb-8">
+            Welcome to the <strong>Oceanology 5</strong> documentation! This resource is designed to help you explore and utilize the Oceanology plugin for Unreal Engine, which brings stunning ocean environments and realistic water simulation to your projects.
+          </p>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold mb-4" id="what-is-oceanology">What is Oceanology?</h2>
+            <p>
+              Oceanology is a powerful Unreal Engine plugin that allows developers to create dynamic and immersive ocean scenes. With advanced features like realistic water physics, customizable waves, and detailed underwater effects, you can elevate your projects to new depths.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold mb-4" id="key-features">Key Features</h2>
+            <ul className="list-disc pl-6 space-y-2">
+              <li><strong>Realistic Water Simulation:</strong> Experience lifelike water behavior with advanced physics and shader techniques.</li>
+              <li><strong>Customizable Waves:</strong> Tailor the appearance and behavior of ocean waves to fit your project needs.</li>
+              <li><strong>Underwater Effects:</strong> Create stunning underwater environments with caustics, fog, and visibility effects.</li>
+              <li><strong>Easy Integration:</strong> Seamlessly integrate Oceanology into your existing Unreal Engine projects.</li>
+            </ul>
+          </section>
+        </main>
+      </div>
+
+      {/* Footer */}
+      <footer className="border-t border-slate-700 p-4">
+        <div className="flex justify-between items-center text-gray-400">
+          <div>Made with Material for MkDocs</div>
+          <div className="flex items-center space-x-2">
+            <span>Next</span>
+            <ChevronRight size={20} />
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
