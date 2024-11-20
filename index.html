@@ -1,45 +1,255 @@
-# Oceanology 5 Documentation
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oceanology Integrations</title>
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-card: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #3b82f6;
+            --accent-dark: #1d4ed8;
+            --border: #2a3a57;
+            --hover: #2d3b54;
+        }
 
-Welcome to the **Oceanology 5** documentation! This resource is designed to help you explore and utilize the Oceanology plugin for Unreal Engine, which brings stunning ocean environments and realistic water simulation to your projects.
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-## What is Oceanology?
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
 
-Oceanology is a powerful Unreal Engine plugin that allows developers to create dynamic and immersive ocean scenes. With advanced features like realistic water physics, customizable waves, and detailed underwater effects, you can elevate your projects to new depths.
+        header {
+            background: linear-gradient(to right, var(--bg-card), var(--bg-primary));
+            padding: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
 
-## Key Features
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-- **Realistic Water Simulation:** Experience lifelike water behavior with advanced physics and shader techniques.
-- **Customizable Waves:** Tailor the appearance and behavior of ocean waves to fit your project needs.
-- **Underwater Effects:** Create stunning underwater environments with caustics, fog, and visibility effects.
-- **Easy Integration:** Seamlessly integrate Oceanology into your existing Unreal Engine projects.
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
 
-## Getting Started
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: var(--accent);
+        }
 
-To get started with Oceanology, follow these steps:
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
 
-1. **[Purchase Oceanology](https://www.unrealengine.com/marketplace/en-US/product/oceanology)** from the Unreal Engine Marketplace.
-2. **Install the Plugin:** Follow the installation instructions [here](./getting-started/installation.md)
-3. **Explore the Documentation:** Use this documentation to learn about all the features and functionalities of Oceanology.
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
 
-## Documentation Overview
+        .nav-link:hover {
+            color: var(--text-primary);
+            background: var(--hover);
+        }
 
-This documentation includes the following sections:
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
 
-- **Installation Guide:** Step-by-step instructions for installing and setting up Oceanology.
-- **Feature Overview:** Detailed explanations of each feature and how to use them.
-- **Tutorials:** Hands-on tutorials to help you create ocean scenes.
-- **API Reference:** Comprehensive API documentation for developers.
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
 
-## Community and Support
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--accent), #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-Join our discord community to connect with other users, developers, get access to the latest updates, tutorials, and news. If you have questions or need support, feel free to reach out via discord:
+        .hero p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
-- **[Discord Channel](https://discord.gg/QYkuHbrgHS)**
+        .integrations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
 
-## Other Social
+        .integration-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
 
-Follow us to always keep updated on our newest showcased releases:
+        .integration-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
 
-- [YouTube](https://www.youtube.com/channel/UCOC9QcesgNX3d7tEfRpvZ7Q)
+        .integration-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
 
-Thank you for choosing Oceanology! We look forward to seeing the amazing ocean environments you create with it.
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .integration-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .note {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .note p {
+            color: var(--text-secondary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .integrations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <div class="logo-img"></div>
+                <span>Oceanology</span>
+            </a>
+            <div class="nav-links">
+                <a href="#" class="nav-link">Documentation</a>
+                <a href="#" class="nav-link">Tutorials</a>
+                <a href="#" class="nav-link">Community</a>
+                <a href="#" class="nav-link">Support</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <h1>Oceanology Integrations</h1>
+            <p>Enhance your ocean environments by combining Oceanology with these community-supported integrations and systems.</p>
+        </div>
+
+        <div class="integrations-grid">
+            <div class="integration-card">
+                <div class="integration-icon"></div>
+                <h3>Fluid Ninja</h3>
+                <p>Integration via WaterInteractionPlugin for advanced fluid dynamics and interactions.</p>
+            </div>
+
+            <div class="integration-card">
+                <div class="integration-icon"></div>
+                <h3>Sky Creator</h3>
+                <p>Create dynamic weather systems and atmospheric effects that interact with your ocean.</p>
+            </div>
+
+            <div class="integration-card">
+                <div class="integration-icon"></div>
+                <h3>NWH Dynamic Water Physics 2</h3>
+                <p>Enhanced water physics simulation for realistic vehicle interactions.</p>
+            </div>
+
+            <div class="integration-card">
+                <div class="integration-icon"></div>
+                <h3>Swim Component</h3>
+                <p>Add swimming capabilities to your characters with full ocean integration.</p>
+            </div>
+
+            <div class="integration-card">
+                <div class="integration-icon"></div>
+                <h3>WorldScape Plugin</h3>
+                <p>Create vast landscapes that seamlessly integrate with Oceanology's water systems.</p>
+            </div>
+
+            <div class="integration-card">
+                <div class="integration-icon"></div>
+                <h3>Easy Survival RPG V5</h3>
+                <p>Complete survival gameplay systems with ocean integration.</p>
+            </div>
+
+            <div class="integration-card">
+                <div class="integration-icon"></div>
+                <h3>Dynamic Volumetric Sky</h3>
+                <p>Atmospheric rendering system that complements ocean environments.</p>
+            </div>
+
+            <div class="integration-card">
+                <div class="integration-icon"></div>
+                <h3>Ascent Combat Framework</h3>
+                <p>Combat system with specialized water-based interactions.</p>
+            </div>
+        </div>
+
+        <div class="note">
+            <h3>Community Driven</h3>
+            <p>We are constantly working to expand the integration capabilities of Oceanology. If you wish to add a plugin, please let us know on our official Discord! For more information about other available plugins, check back often or join the community discussions.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Oceanology - Advanced Ocean System for Unreal Engine</p>
+    </footer>
+</body>
+</html>
